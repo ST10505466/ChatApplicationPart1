@@ -32,7 +32,29 @@ public class ChatApplicationPart1 {
         //USER NEEDS TO ENTER A PASSWORD
         //THAT IS ATLEAST 8 CHARACTERS LONG, HAS A CAPITAL LETTER,A NUMBER AND A SPECIAL CHARACTER
         
+        System.out.print("ENTER SA CELL NUMBER (+27...):  ");
+        String number = input.nextLine();
+        //USER ENTERS A VALID SA PHONE NUMBER
         
+        String message = login.registerUser(username, password, number, firstName, lastName);
+        System.out.println(message);
+        //Storing the returned message and calling registerUser method
+        
+        //THE LOGIN PART
+        System.out.println("/n == LOGIN ==");
+        
+        System.out.print("ENTER USERNAME:  ");
+        String loginUser = input.nextLine();
+        //USER ENTERS USERNNAME THAT WAS ENTERED WHEN DOING THE REGISTRATION SECTION
+        
+        System.out.print("ENTER PASSWORD:  ");
+        String loginPass = input.nextLine();
+        //USER ENTERS THE SAME PASSWORD THAT WAS CREATED AT THE REGISTRATION SECTION
+        
+        boolean success = login.loginUser(loginUser, loginPass);
+        //CHECK IF LOGIN DETAILS ARE CORRECT
+        System.out.println(login.returnLoginStatus(success));
+        //LOGIN STATUS MESSAGE IS DISPLAYED
         
     }
 }
