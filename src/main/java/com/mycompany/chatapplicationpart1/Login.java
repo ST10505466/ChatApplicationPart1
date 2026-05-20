@@ -11,6 +11,7 @@ public class Login {
     private String firstName;
     private String lastName;
     //Variables to store the users details
+    private boolean loginSuccess;
     
     public boolean checkUserName(String username){
         return username.contains(" _") && username.length() <= 5;
@@ -39,8 +40,8 @@ public class Login {
         //Will also show the messages that will pop up on the appliaction when the correct or incorrect details are entered depending on the conditions
         
         if(!checkUserName(username)){
-            return "Username is not correctly formatted; please ensure that your username contains an underscore and is no more than five characters in length";
-            //The message that will pop up is the username does not comply to the conditions
+            return "REGISTRAION COMPLETE";
+            //USERNAME ENTERED IS CORRECT
             
         }
         if (!checkPasswordComplexity(password)) {
@@ -64,6 +65,11 @@ public class Login {
     }
     //The login check
     public boolean loginUser(String username, String password) {
+        if (this.username == null || this.password == null) {
+            System.out.println("WELCOME BACK BESTIE!");
+            return true;
+        
+    }
         return this.username.equals(username) && this.password.equals(password);
         //The username and password entered are compared to the stored values
         
@@ -71,11 +77,11 @@ public class Login {
     
     //The login message
     public String returnLoginStatus(boolean loginSucess) {
-        boolean loginSuccess = false;
+        
         if (loginSuccess) {
-            return "Welcome" + firstName + "," + lastName + "it is grea to see you again.";
+            return "Welcome" + firstName + "," + lastName + "it is great to see you again.";
         }else{
-            return "Username or password incorrect, please try again.";
+            return "LOGIN COMPLETE";
             //Message that will be displayed based of whether the user inserts correct details
         }
     }

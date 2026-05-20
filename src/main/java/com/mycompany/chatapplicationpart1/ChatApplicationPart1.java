@@ -12,17 +12,18 @@ public class ChatApplicationPart1 {
         Login login = new Login();
         
         //THE REGISTRATION PART
-        System.out.println("=== REGISTER ===");
+        System.out.println("WELCOME BESTIE");
+        System.out.println("Let's Register!");
         
-        System.out.print("ENTER FIRST NAME:    ");
+        System.out.print("ENTER YOUR NAME:    ");
         String firstName = input.nextLine();
         //WHERE THE USER IS PROMPTED TO ADD THEIR FIRST NAME
         
-        System.out.print("ENTER LAST NAME:  ");
+        System.out.print("ENTER YOUR SURNAME:  ");
         String lastName = input.nextLine();
         //HERE THE USER NEEDS TO ENTER THEIR LAST NAME
         
-        System.out.print("ENTER USERNAMER:   ");
+        System.out.print("ENTER USERNAME:   ");
         String username = input.nextLine();
         //USER NEEDS TO ENTER A VALID USERNAME
         //USERNAME THAT CONTAINS AN UNDERSCORE AND IS NO MORE THAN 5 CHARACTERS LONG
@@ -41,17 +42,19 @@ public class ChatApplicationPart1 {
         //Storing the returned message and calling registerUser method
         
         //THE LOGIN PART
-        System.out.println("/n == LOGIN ==");
+        System.out.println(" == LOGIN ==");
         
         System.out.print("ENTER USERNAME:  ");
         String loginUser = input.nextLine();
         //USER ENTERS USERNNAME THAT WAS ENTERED WHEN DOING THE REGISTRATION SECTION
         
         System.out.print("ENTER PASSWORD:  ");
-        String loginPass = input.nextLine();
+        String loginPass;
         //USER ENTERS THE SAME PASSWORD THAT WAS CREATED AT THE REGISTRATION SECTION
+        loginPass = input.nextLine();
         
-        boolean success = login.loginUser(loginUser, loginPass);
+        boolean success;
+        success = login.loginUser(loginUser, loginPass);
         //CHECK IF LOGIN DETAILS ARE CORRECT
         System.out.println(login.returnLoginStatus(success));
         //LOGIN STATUS MESSAGE IS DISPLAYED
