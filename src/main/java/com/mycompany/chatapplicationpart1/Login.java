@@ -66,7 +66,7 @@ public class Login {
     //The login check
     public boolean loginUser(String username, String password) {
         if (this.username == null || this.password == null) {
-            System.out.println("WELCOME BACK BESTIE!");
+            System.out.println("WELCOME BACK BESTIE.");
             return true;
         
     }
