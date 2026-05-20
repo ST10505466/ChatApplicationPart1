@@ -9,16 +9,16 @@ import java.util.Random;
 public class Message {
     
     //Variable that is used to store the unique message ID
-    private String messageID;
+    private final String messageID;
     
     //This one stores the current message number
-    private int messageNumber;
+    private final int messageNumber;
     
     //Stores the receivers cell phone number
-    private String recipient;
+    private final String recipient;
     
     //Stores the actucal message that is typed out by the user
-    private String messageText;
+    private final String messageText;
     
     //Static variable holds or keeps count of the messages being sent,all of them
     public static int totalMessages = 0;
@@ -97,27 +97,38 @@ public class Message {
     //Send message, disgard message and store message
     public String sentMessage(int choice) {
         
-        if(choice == 1) {
-            //If the user decides to send a message
-            totalMessages++;
-            return "MESSAGE SUCCESSFULLY SENT" ;
+        switch (choice) {
+            case 1 -> {
+                //If the user decides to send a message
+                totalMessages++;
+                return "MESSAGE SUCCESSFULLY SENT" ;
+            }
+            case 2 -> {
+                return "PRESS 0 TO DELETE THE MESSAGE" ;
+            }
+            case 3 -> {
+                return "MESSAGE SUCCESSFULLY STORED" ;
+            }
+            default -> {
+                return "INVALID OPTION" ;
+            }
         }
-        //User choses to digard message
-        else if(choice == 2) {
-            return "PRESS 0 TO DELETE THE MESSAGE" ;
-        } 
+    }
+    //This method shows all the message details
+    public String printMessages() {
         
-            //USER CHOSES TO STORE THE MESSAGE
-        else if(choice == 3) {
-            return "MESSAGE SUCCESSFULLY STORED" ;
-        }
-        else {
-            return "INVALID OPTION" ;
-            
-            
-            
-           
-        }
+        return "MESSAGE ID: " + messageID 
+                + "/nMessgae Hash:" + createMessageHash()
+                +"nRecipient :" + recipient +
+                "/nMessagae:" + messageText;
+        
+        
+    }
+    //Returining the total amount of message sent
+    public int returnTotalMessages() {
+        
+        return totalMessages;
+        
     }
     
     
