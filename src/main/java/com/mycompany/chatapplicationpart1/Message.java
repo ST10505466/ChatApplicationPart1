@@ -73,6 +73,54 @@ public class Message {
             
         }
     }
+    //This method creates a message has
+    //This hash will include: Message number,first and last word of the message and the first two digits of message ID
+    public String createMessageHash() {
+        
+        String[] words = messageText.split("");
+        //Splitting the message into separate words
+        
+        String firstWord = words[0];
+        //Getting the first word
+        
+        String lastWord = words[words.length - 1];
+         
+        
+        String hash = messageID.substring(0,2) + ":" + messageNumber + ":" + firstWord + lastWord;
+        //Building the hash
+         
+        return hash.toUpperCase();
+        //Converting them to uppercase 
+    }
+    //This method deals with message options selected ny the user
+    //The options are:
+    //Send message, disgard message and store message
+    public String sentMessage(int choice) {
+        
+        if(choice == 1) {
+            //If the user decides to send a message
+            totalMessages++;
+            return "MESSAGE SUCCESSFULLY SENT" ;
+        }
+        //User choses to digard message
+        else if(choice == 2) {
+            return "PRESS 0 TO DELETE THE MESSAGE" ;
+        } 
+        
+            //USER CHOSES TO STORE THE MESSAGE
+        else if(choice == 3) {
+            return "MESSAGE SUCCESSFULLY STORED" ;
+        }
+        else {
+            return "INVALID OPTION" ;
+            
+            
+            
+           
+        }
+    }
+    
+    
 
     
     
