@@ -13,6 +13,7 @@ public class MessageManager {
     
     //TO KEEP TRACK OF THE AMOUNT OF MESSAGES THAT HAVE BEEN STORED
     private int messageCount = 0;
+    private String[] readFlags;
     
    public void addMessages(String hash, String recipient, String message) {
        //THIS METHOD STORES A NEW MESSGAE INSIDE THE ARRAYS
@@ -104,20 +105,56 @@ public class MessageManager {
    public String displayReport() {
        //DISPLAYING A REPORT THAT SHOWS ALL THE STORED MESSAGES
        
-       String report = "";
+       String report = "=== MESSAGE REPORT ====/n";
        //VARIABLE THAT IS USED TO BUILD THE REPORT
        
        for (int i = 0; i < messageCount; i++) {
            //LOOP THROUGH EVERY MESSAGE THAT IS STORED
            
            report += "Message Hash:  " + messageHashes[i] + "/n";
+           report += "Recipient: " + recipients[i] + "/n";
+           report += "Message: " + messages[i] + "/n";
+           report += "Read: " + readFlags[i] + "/n";
+           report += "--------------/n";
+           
+           
            
            
        }
        return report;
        
    }
+
+    public void addMessage(String string, String string0, String hello_Mike) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void addMessage(String string, String string0, String hello_Mike) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void addMessage(String string, String string0, String short_msg) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void addMessage(String string, String string0, String this_is_a_much_longer_message_than_the_fi) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void addMessage(String string, String string0, String hello_Mike) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void addMessage(String string, String string0, String hello_Mike) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void addMessage(String string, String string0, String hello_Mike) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+  
+   }
        
 
     
-}
+
